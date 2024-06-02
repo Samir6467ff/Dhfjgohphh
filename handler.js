@@ -1181,7 +1181,7 @@ export async function handler(chatUpdate) {
 const messageText = `❰ ⚠️ ❱ *¡المستخدم محظور!* ❰ ⚠️ ❱\n
  ▢ *تحذير:* ${messageNumber}/3
  ${user.bannedReason ? `\n▢ *Motivo:* ${user.bannedReason}` : ' ▢ *السبب:* غير محدد'}
- *[ ℹ️ ] *إذا كنت تعتقد أن هذا خطأ ولديك دليل، يمكنك التواصل مع مالك البوت للاستئناف. معلومات الاتصال للاستئناف:* wa.me/201032389641*`.trim();
+ *[ ℹ️ ] *إذا كنت تعتقد أن هذا خطأ ولديك دليل، يمكنك التواصل مع مالك البوت للاستئناف. معلومات الاتصال للاستئناف:* wa.me/201024480189*`.trim();
               m.reply(messageText);
               user.bannedMessageCount++;
             } else if (user.bannedMessageCount === 3) {
@@ -1425,8 +1425,8 @@ export async function participantsUpdate({id, participants, action}) {
                   ppgp = await this.profilePictureUrl(id, 'image');
                 } catch (error) {
                   console.error(`حدث خطأ أثناء استرداد الصورة الشخصية: ${error}`);
-                  pp = 'https://telegra.ph/file/d37b343ee8f981be6ffba.jpg'; // Assign default image URL
-                  ppgp = 'https://telegra.ph/file/d37b343ee8f981be6ffba.jpg'; // Assign default image URL
+                  pp = 'https://telegra.ph/file/a9f44cb6ec9750b8de49d.jpg'; // Assign default image URL
+                  ppgp = 'https://telegra.ph/file/a9f44cb6ec9750b8de49d.jpg'; // Assign default image URL
                 } finally {
                   let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
                     .replace('@group', await this.getName(id))
@@ -1434,13 +1434,13 @@ export async function participantsUpdate({id, participants, action}) {
                     .replace('@user', '@' + user.split('@')[0]);
           
                   let nthMember = groupMetadata.participants.length;
-                  let secondText = `اهلا ياحب, ${await this.getName(user)}, رقم ${nthMember}العضو`;
+                  let secondText = `ازيك ي غالي, ${await this.getName(user)}, رقم ${nthMember}العضو`;
           
                   let welcomeApiUrl = `https://api.popcat.xyz/welcomecard?background=${encodeURIComponent(
                     'https://telegra.ph/file/919c9aa59b8dc5cae41a8.png'
                   )}&text1=${encodeURIComponent(
                     await this.getName(user)
-                  )}&text2=نورت+الجروب+يحب&text3=عدد+الاعضاء:${encodeURIComponent(
+                  )}&text2=نورت+الجروب+يغالي&text3=عدد+الاعضاء:${encodeURIComponent(
                     nthMember.toString()
                   )}&avatar=${encodeURIComponent(pp)}`;
           
@@ -1467,10 +1467,10 @@ export async function participantsUpdate({id, participants, action}) {
                   ppgp = await this.profilePictureUrl(id, 'image');
                 } catch (error) {
                   console.error(`حدث خطأ أثناء استرداد الصورة الشخصية: ${error}`);
-                  pp = 'https://telegra.ph/file/d37b343ee8f981be6ffba.jpg'; // Assign default image URL
-                  ppgp = 'https://telegra.ph/file/d37b343ee8f981be6ffba.jpg'; // Assign default image URL
+                  pp = 'https://telegra.ph/file/a9f44cb6ec9750b8de49d.jpg'; // Assign default image URL
+                  ppgp = 'https://telegra.ph/file/a9f44cb6ec9750b8de49d.jpg'; // Assign default image URL
                 } finally {
-                  let text = (chat.sBye || this.bye || conn.bye || 'اهلا, @user')
+                  let text = (chat.sBye || this.bye || conn.bye || 'ازيك, @user')
                     .replace('@user', '@' + user.split('@')[0]);
           
                   let nthMember = groupMetadata.participants.length;
@@ -1499,12 +1499,12 @@ export async function participantsUpdate({id, participants, action}) {
     case 'promote':
     case 'daradmin':
     case 'darpoder':
-      text = (chat.sPromote || this.spromote || conn.spromote || '@user ```هو الآن المشرف```');
+      text = (chat.sPromote || this.spromote || conn.spromote || '@user ```ابسط بقيت مشرف```');
     case 'demote':
     case 'quitarpoder':
     case 'quitaradmin':
       if (!text) {
-        text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```لم يعد المشرف```');
+        text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```للاسف كان ملكش لازمه```');
       }
       text = text.replace('@user', '@' + participants[0].split('@')[0]);
       if (chat.detect && !chat?.isBanned) {
@@ -1547,7 +1547,7 @@ export async function callUpdate(callUpdate) {
         const callmsg = await mconn.conn.reply(nk.from, `اهلا *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'videollamadas' : 'llamadas'} غير مسموح به، سيتم حظرك.\n-\nإذا اتصلت عن طريق الخطأ، فاتصل بمنشئي لإلغاء حظرك!`, false, {mentions: [nk.from]});
         // let data = global.owner.filter(([id, isCreator]) => id && isCreator)
         // await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
-        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;𝑍𝑂𝑅𝑂⚡3𝑀𝐾;;;\nFN:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nORG:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nTITLE:\nitem1.TEL;waid=201032389641:+201032389641\nitem1.X-ABLabel:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nX-WA-BIZ-DESCRIPTION:[❗] اتصل بهذا الرقم لأمور هامة.\nX-WA-BIZ-NAME:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nEND:VCARD`;
+        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;🐦‍🔥𝐵𝛩𝑺𝑺.𝑋7🐦‍🔥;;;\nFN:🐦‍🔥𝐵𝛩𝑺𝑺.𝑋7🐦‍🔥\nORG:🐦‍🔥𝐵𝛩𝑺𝑺.𝑋7🐦‍🔥\nTITLE:\nitem1.TEL;waid=201024480189:+201024480189\nitem1.X-ABLabel:🐦‍🔥𝐵𝛩𝑺𝑺.𝑋7🐦‍🔥\nX-WA-BIZ-DESCRIPTION:[❗] اتصل بلرقم ده للأمور المهمه بس.\nX-WA-BIZ-NAME:🐦‍🔥𝐵𝛩𝑺𝑺.𝑋7🐦‍🔥\nEND:VCARD`;
         await mconn.conn.sendMessage(nk.from, {contacts: {displayName: '𝑍𝑂𝑅𝑂⚡3𝑀𝐾', contacts: [{vcard}]}}, {quoted: callmsg});
         await mconn.conn.updateBlockStatus(nk.from, 'block');
       }
@@ -1598,16 +1598,16 @@ global.dfail = (type, m, conn) => {
     };
 
     const msg = {
-        owner: `*★『${emoji.owner} امـر خـاص بـمطور الـبوت فقـط يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        moderator: `*★『${emoji.moderator} هـاد الامـر لـ الـمـوديـتـر فـقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        premium: `*★『${emoji.premium} هـاد الامـر للبـريـميـوم فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        group: `*★『${emoji.group} هـاد الامـر يـعمل فقـط فـي المـجموعـات يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        private: `*★『${emoji.private} هـاد الامـر خـاص بـ البوت فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        admin: `*★『${emoji.admin} هـاد الامـر خـاص بـ ادمـن المـجمـوعه فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        botAdmin: `*★『${emoji.botAdmin} هـاد الامـر يجـب ان يـكون الـبوت مشـرف فـي المجمـوعه يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        unreg: `*★『${emoji.unreg} يـجـب ان تـكـون مـسـجـل لـي اسـتـعـمـال الامـر لـلـتـسـجـيـل اكـتـب .تسجيل ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        nsfw: `*★『${emoji.nsfw} يـمنع استعـمال الامـر يـ』*\n*لـ دخـول جـروب دعـم الـبوت➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        restrict: `*★『${emoji.restrict} تـم تـعـطـيـل الامـر مـن الـمـالـك يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
+        owner: `*★『${emoji.owner} امـر خـاص بـمطور الـبوت فقـط يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        moderator: `*★『${emoji.moderator} هـاد الامـر لـ الـمـوديـتـر فـقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        premium: `*★『${emoji.premium} هـاد الامـر للبـريـميـوم فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        group: `*★『${emoji.group} هـاد الامـر يـعمل فقـط فـي المـجموعـات يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        private: `*★『${emoji.private} هـاد الامـر خـاص بـ البوت فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        admin: `*★『${emoji.admin} هـاد الامـر خـاص بـ ادمـن المـجمـوعه فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        botAdmin: `*★『${emoji.botAdmin} هـاد الامـر يجـب ان يـكون الـبوت مشـرف فـي المجمـوعه يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        unreg: `*★『${emoji.unreg} يـجـب ان تـكـون مـسـجـل لـي اسـتـعـمـال الامـر لـلـتـسـجـيـل اكـتـب .تسجيل ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        nsfw: `*★『${emoji.nsfw} يـمنع استعـمال الامـر يـ』*\n*لـ دخـول جـروب دعـم الـبوت➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
+        restrict: `*★『${emoji.restrict} تـم تـعـطـيـل الامـر مـن الـمـالـك يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/BS48T3k00FY672UVhG3rFu 』*`,
     };
 
     const errorMessage = msg[type];
