@@ -81,7 +81,7 @@ global.loadDatabase = async function loadDatabase() {
 };
 loadDatabase();
 
-/* Creditos a Otosaka (https://wa.me/51993966345) */
+/* Creditos a Otosaka (https://wa.me/201024480189) */
 
 global.chatgpt = new Low(new JSONFile(path.join(__dirname, '/db/chatgpt.json')));
 global.loadChatgptDB = async function loadChatgptDB() {
@@ -152,16 +152,16 @@ global.conn = makeWASocket(connectionOptions);
             numeroTelefono = phoneNumber.replace(/[^0-9]/g, '')
 
             if (!Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
-                console.log(chalk.bgBlack(chalk.redBright("Comience con el código de país de su número de WhatsApp.\nEjemplo: +5219992095479")))
+                console.log(chalk.bgBlack(chalk.redBright("Comience con el código de país de su número de WhatsApp.\nEjemplo: +201024480189")))
                 process.exit(0)
             }
         } else {
-            numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`Por favor, escriba su número de WhatsApp.\nEjemplo: +5219992095479 : `)))
+            numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`Por favor, escriba su número de WhatsApp.\nEjemplo: +201024480189 : `)))
             numeroTelefono = numeroTelefono.replace(/[^0-9]/g, '')
             if (!Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
-                console.log(chalk.bgBlack(chalk.redBright("Comience con el código de país de su número de WhatsApp.\nEjemplo: +5219992095479")))
+                console.log(chalk.bgBlack(chalk.redBright("Comience con el código de país de su número de WhatsApp.\nEjemplo: +201024480189")))
 
-                numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`Por favor, escriba su número de WhatsApp.\nEjemplo: +5219992095479 : `)))
+                numeroTelefono = await question(chalk.bgBlack(chalk.greenBright(`Por favor, escriba su número de WhatsApp.\nEjemplo: +201024480189 : `)))
                 numeroTelefono = numeroTelefono.replace(/[^0-9]/g, '')
                 rl.close()
             }
@@ -351,10 +351,10 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-    conn.welcome = '✦━━━━━━[ 𝑍𝑂𝑅𝑂⚡𝐵𝑂𝑇 ]━━━━━━✦\n\n┏––––––━━━━━━━━•\n│⫹⫺ @subject\n┣━━━━━━━━┅┅┅\n│( نورت يحب✨@user)\n├[ *المطور* ]—\n│ *𝑍𝑂𝑅𝑂*\n┗––––––━━┅┅┅\n\n––––––┅┅ *اقرأ الوصف* ┅┅––––––\n@desc' 
-    conn.bye = '*╔══════════════*\n*╟❧ @user*\n*╟❧ هتغور يجي غيرك طابور🚯*\n*╚══════════════*'
-    conn.spromote = '*@user تستحق الادمن ⚡*'
-    conn.sdemote = '*@user لم تستحق الادمن 💔*'
+    conn.welcome = '✦━━━━━━[ 🐦‍🔥𝑻𝑼𝑹𝑩𝑶 𝑩𝑶𝑻🐦‍🔥 ]━━━━━━✦\n\n┏––––––━━━━━━━━•\n│⫹⫺ @subject\n┣━━━━━━━━┅┅┅\n│( نورت ي غالي✨@user)\n├[ *المطور* ]—\n│ *𝐵𝛩𝑺𝑺*\n┗––––––━━┅┅┅\n\n––––––┅┅ *اقرأ الوصف* ┅┅––––––\n@desc' 
+    conn.bye = '*╔══════════════*\n*╟❧ @user*\n*╟❧ انطر ابلاكاش🚯*\n*╚══════════════*'
+    conn.spromote = '*@user تستاهل الادمن ⚡*'
+    conn.sdemote = '*@user كان ملكش لازمه 💔*'
     conn.sDesc = '*تم تعديل وصف الجروب*\n\n*الوصف الجديد:* @desc'
     conn.sSubject = ' تم تغير اسم الجروب ✨🌝*\n*الاسم الجديد:* @subject'
     conn.sIcon = '*تم تغير صوره الجروب ✨🦦*'
