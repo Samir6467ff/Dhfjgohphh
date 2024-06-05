@@ -1477,10 +1477,10 @@ export async function participantsUpdate({id, participants, action}) {
                   let secondText = `وداعا, رقم ${nthMember}عضونا`;
           
                   let leaveApiUrl = `https://api.popcat.xyz/welcomecard?background=${encodeURIComponent(
-                    'https://telegra.ph/file/919c9aa59b8dc5cae41a8.png'
+                    'https://telegra.ph/file/1257ff408888c6bebe612.jpg'
                   )}&text1=${encodeURIComponent(
                     await this.getName(user)
-                  )}&text2=الي+القاء&text3=عدد+الاعضاء:${encodeURIComponent(
+                  )}&text2=انطر+ابلاكاش&text3=عدد+الاعضاء:${encodeURIComponent(
                     nthMember.toString()
                   )}&avatar=${encodeURIComponent(pp)}`;
           
