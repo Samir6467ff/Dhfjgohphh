@@ -20,7 +20,7 @@ import { createHash } from 'crypto'
        let uptime = clockString(_uptime)
    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
    if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات الخاصة بي`
-   let videoUrl = 'https://telegra.ph/file/6a2de86e33948da38cc96.mp4'
+   let videoUrl = 'https://telegra.ph/file/8425aaaea05b15efaf93a.mp4'
    let user = global.db.data.users[who]
    let { name, exp, diamond, lastclaim, registered, regTime, age, level, role, warn } = global.db.data.users[who]
    let { min, xp, max } = xpRange(user.level, global.multiplier)
@@ -31,7 +31,7 @@ import { createHash } from 'crypto'
    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
    let more = String.fromCharCode(8206)
    let readMore = more.repeat(850) 
-  m.react('🐍')
+  m.react('📁')
    let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
    let str = `
 ⋄━───═◞⬪ 𝑻𝑼𝑹𝑩𝑶 𝑩𝑶𝑻 ⬪◟═───━⋄
