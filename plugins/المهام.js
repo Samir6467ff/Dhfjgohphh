@@ -20,7 +20,7 @@ import { createHash } from 'crypto'
        let uptime = clockString(_uptime)
    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
    if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات الخاصة بي`
-   let videoUrl = 'https://telegra.ph/file/00a9500ae2a3e6315cdd1.mp4'
+   let videoUrl = 'https://telegra.ph/file/9967e78e23fdd80be8841.mp4'
    let user = global.db.data.users[who]
    let { name, exp, diamond, lastclaim, registered, regTime, age, level, role, warn } = global.db.data.users[who]
    let { min, xp, max } = xpRange(user.level, global.multiplier)
@@ -30,7 +30,7 @@ import { createHash } from 'crypto'
    let sn = createHash('md5').update(who).digest('hex')
    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
    let more = String.fromCharCode(8206)
-   m.react('🦅')
+   m.react('📃')
    let readMore = more.repeat(850) 
    let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
    let str = `
@@ -39,7 +39,7 @@ import { createHash } from 'crypto'
 
 ✮ ⃟👤≽ مـعـلــومـات الـبــوت╿↶
 ━ ── • ⟐ • ── ━
-🐍✬⃝╿↵ اســم الـبــوت  𝐓𝐔𝐑𝐁𝐎お ‘ 
+🐍✬⃝╿↵ اســم الـبــوت  𝐓𝐔𝐑𝐁𝐎‘ 
 🐍✬⃝╿↵ وقــت الـتشـغـيــل : ⌊ ${uptime} ⌉╎
 🐍✬⃝╿↵ الـمـطـور : ⌊https://wa.me/201024480189╎
 🐍✬⃝╿↵ الـمـطـور : ⌊ https://Solo to boss ⌉╎
@@ -290,7 +290,7 @@ import { createHash } from 'crypto'
 ✮ ⃟🛡️➤ .تسريع⌉
 ✮ ⃟🛡️➤ .نشر⌉
 ⋄━───═◞⬪𝑻𝑼𝑹𝑩𝑶 𝑩𝑶𝑻⬪◟═───━⋄
-* تواصل مع المطور*
+* للتواصل مع المطور*
 ✮ ⃟🐦‍🔥➤ .المطور
    `.trim()
        conn.sendMessage(m.chat, {
